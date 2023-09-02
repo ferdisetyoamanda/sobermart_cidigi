@@ -1,13 +1,16 @@
 import React from 'react';
+import About from '../components/about/About';
+import BreadCrumb from '../components/Breadcrumb';
 
 function PageAbout() {
+  const breadcrumbItems = [
+    { label: 'Home', url: '/' },
+    { label: 'Tentang Kami', url: '/' },
+  ];
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-semibold mb-4">Tentang Kami</h1>
-      <p className="text-gray-700">
-        Selamat datang di halaman Tentang Kami! Kami adalah tim yang berdedikasi dalam menyediakan solusi kreatif untuk masalah Anda.
-      </p>
-    </div>
+    <>
+    <BreadCrumb items={breadcrumbItems} />
+    <About /></>
   );
 }
 

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 function TopAppBar() {
   return (
-    <div className="flex justify-between items-center p-2 bg-gray-100 text-black text-sm border-b border-gray-300">
+    <div className="responsive md:block hidden">
+      <div className="flex justify-between items-center p-2 bg-gray-100 text-black text-sm border-b border-gray-300 ">
       <div className="space-x-4 flex items-center">
         <Link to="/about" className="hover:text-blue-600 ">Tentang Kami</Link>
         <span className="border-l border-gray-400 h-3 my-1 mx-2"></span>
@@ -26,6 +27,8 @@ function TopAppBar() {
         <Link to="/register" className="hover:text-blue-600">Daftar</Link>
       </div>
     </div>
+    </div>
+    
   );
 }
 
