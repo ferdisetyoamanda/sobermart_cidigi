@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+import { BASE_URL } from '../../utils/ApiConfig';
 
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [rememberMe, setRememberMe] = useState(false);
+
+    const navigate = useNavigate(); // Menggunakan useNavigate untuk navigasi
 
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
@@ -20,11 +26,26 @@ const LoginForm = () => {
     };
 
     const handleLogin = () => {
-        // Di sini Anda bisa menambahkan logika untuk memproses login
-        console.log('Username:', username);
-        console.log('Password:', password);
-        console.log('Remember Me:', rememberMe);
+        const data = {
+            email: username,
+            password: password,
+            is_remember: rememberMe,
+        };
+
+        axios.post(`${BASE_URL}/auth/signin`, data)
+            .then((response) => {
+                const { token } = response.data;
+
+                // Simpan token di Local Storage
+                localStorage.setItem('authToken', token);
+                console.log('Respon API:', response.data);
+                navigate('/'); // Menggunakan navigate untuk mengarahkan pengguna ke '/dashboard'
+            })
+            .catch((error) => {
+                console.error('Kesalahan Permintaan API:', error);
+            });
     };
+
 
     return (
         <div className="h-screen flex justify-center items-center bg-gray-100">
@@ -88,6 +109,7 @@ const LoginForm = () => {
                     >
                         Masuk
                     </button>
+
                 </div>
             </div>
         </div>

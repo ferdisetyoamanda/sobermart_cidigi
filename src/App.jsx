@@ -10,6 +10,7 @@ import PageAbout from './pages/PageAbout';
 import PageLogin from './pages/PageLogin';
 import PageRegister from './pages/PageRegister';
 import PageContact from './pages/PageContact';
+import PageProduct from './pages/PageProducts';
 // import MainContent from './components/MainContent';
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/register" element={<PageRegister />} />
 
         <Route path="/contact" element={<PageContact />} />
+        <Route path="/product" element={<PageProduct />} />
 
         
         {/* Tambahkan rute lainnya di sini jika diperlukan */}

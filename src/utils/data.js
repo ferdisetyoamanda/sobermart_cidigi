@@ -3,24 +3,28 @@ export const datas = [
         id: 1,
         title: "Rumah Tangga",
         image: "/rumah_tangga.png",
+        url: "/rumah-tangga",
 
     },
     {
         id: 2,
         title: "Audio, Kamera, dan Elektronik Lainnya",
         image: "/kamera.png",
+        url: "/audio-kamera-dan-elektronik-lainnya",
 
     },
     {
         id: 3,
         title: "Fashion Muslim",
         image: "/fashion_muslim.png",
+        url: "/fashion-muslim",
 
     },
     {
         id: 4,
         title: "Fashion Wanita",
         image: "/fashion_wanita.png",
+        url: "/fashion-wanita",
 
     },
     {
