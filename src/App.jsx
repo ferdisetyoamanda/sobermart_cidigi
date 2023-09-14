@@ -12,21 +12,21 @@ import PageRegister from './pages/PageRegister';
 import PageContact from './pages/PageContact';
 import PageProduct from './pages/PageProducts';
 // import MainContent from './components/MainContent';
-
-
 import Footer from './components/Footer';
 
+
 function App() {
+  
   return (
     <div>
       <TopAppBar />
-      <MidleBar/>
-      <HeaderWrapaper/>
-      
+      <MidleBar />
+      <HeaderWrapaper />
+
 
       {/* <MainContent/> */}
 
-      
+
       <Routes>
         <Route index element={<PageDashboard />} />
         <Route path="/about" element={<PageAbout />} />
@@ -36,11 +36,11 @@ function App() {
         <Route path="/contact" element={<PageContact />} />
         <Route path="/product" element={<PageProduct />} />
 
-        
+
         {/* Tambahkan rute lainnya di sini jika diperlukan */}
       </Routes>
       <Footer />
-      
+
     </div>
   );
 }

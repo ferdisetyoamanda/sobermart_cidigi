@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from '../components/login/LoginForm';
-import BreadCrumb from '../components/Breadcrumb';
+import BreadCrumb from '../components/BreadCrumb';
 
 function PageLogin() {
   const breadcrumbItems = [
